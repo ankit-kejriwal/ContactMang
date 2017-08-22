@@ -1,0 +1,28 @@
+<h2 class="formDiv">Add a Contact</h2>
+<div class="formDiv">
+    <form name="contactForm">
+        <p>
+            <label class="labelClass">First Name:</label>
+            <input type="text" name='firstName' ng-model="obj.firstName" required>
+        </p>
+        <p>
+            <label class="labelClass">Middle Name:</label>
+            <input type="text" name='middleName' ng-model="obj.middleName">
+        </p>
+        <p>
+            <label class="labelClass">Last Name:</label>
+            <input type="text" name='lastName' ng-model="obj.lastName">
+        </p>
+        <p>
+            <label class="labelClass"> Contact Number:</label>
+            <input type="number" name="num" ng-model = "obj.number" required>
+        </p>
+        <p>
+            <label class="labelClass">Contact Email:</label>
+           <input type="email" name="mail" ng-model="obj.mail">
+        </p>
+        <p>
+           <button ng-click=addCont(obj)>Add a Contact</button>
+        </p>
+    </form>
+</div>

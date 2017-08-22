@@ -1,0 +1,33 @@
+html,body,#container{
+    width: 100%;
+    height: 100%;
+}
+.mainHeader{
+    text-align: center;
+}
+header{
+    width: 100%;
+    height: 20%;
+    background-color: teal;
+}
+.formDiv{
+    padding:2%; 
+}
+.inputClass{
+    padding: 20px;
+}
+.labelClass{
+    width: 20%;
+}
+.viewHeader{
+    text-align: center;
+}
+.modal-dialog {
+    top: 15%;
+}
+.editIcon{
+    background: url(/images/edit-button.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}

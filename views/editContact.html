@@ -1,0 +1,23 @@
+<div class="formDiv">
+<form name="editForm">
+        <p>
+            <label class="labelClass">First Name:</label>
+            <input type="text" name='firstName' value="editObj.firstName" ng-model="editObj.firstName" required>
+        </p>
+        <p>
+            <label class="labelClass">Middle Name:</label>
+            <input type="text" name='middleName' value="editObj.middleName" ng-model="editObj.middleName">
+        </p>
+        <p>
+            <label class="labelClass">Last Name:</label>
+            <input type="text" name='lastName' value="editObj.lastName" ng-model="editObj.lastName">
+        </p>
+        <p>
+            <label class="labelClass">Contact Email:</label>
+           <input type="email" name="mail" value="editObj.contactEmail" ng-model="editObj.contactEmail">
+        </p>
+        <p>
+           <button ng-click = editCont(editObj)>Edit Contact</button>
+        </p>
+</form>
+</div>
