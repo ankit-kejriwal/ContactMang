@@ -41,6 +41,9 @@ header{
     font-weight: bold;
     font-size: 18px;
 }
+.modal-dialog{
+    top: 15%;
+}
 .rightBorder{
     border-right: 1px solid black;
 }
