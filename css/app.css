@@ -27,7 +27,7 @@ header{
     color: black;
 }
 .editIcon{
-    background: url(/images/edit-button.png) no-repeat;
+    background: url(/ContactMang/images/edit-button.png) no-repeat;
     width: 16px;
     height: 16px;
     cursor: pointer;
