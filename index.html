@@ -14,28 +14,38 @@
     <script src="services/contactService.js"></script>
 </head>
 <body ng-app='contact'>
-    <div id="container" ng-controller="contactController">
+    <div id="container" ng-controller="contactController" ng-init="fetchContact()">
     <header>
         <h2 class="mainHeader">Contact Search App</h2>    
     </header>
     <main>
         <toaster-container></toaster-container>
-        <button ng-click=add()>Add a Contact</button>
-        <button ng-click=fetchContact()>View Contacts</button>
-            <div ng-if="viewClicked">
-            <div class="col-md-4 col-sm-4 col-xs-4 viewHeader">Name</div>
-            <div class="col-md-3 col-sm-3 col-xs-3 viewHeader">Contact</div>
-            <div class="col-md-4 col-sm-4 col-xs-4 viewHeader">Mail</div>
-            <div class="col-md-1 col-sm-1 col-xs-1 viewHeader"></div>
-            <br>
-            <div ng-if ="displayContact" ng-repeat = "list in displayList">
-            <div class="col-md-4 col-sm-4 col-xs-4 viewHeader">{{list.firstName+" "+list.middleName+" "+list.lastName}}</div>
-            <div class="col-md-3 col-sm-3 col-xs-3 viewHeader">{{list.contactNumber}}</div>
-            <div class="col-md-4 col-sm-4 col-xs-4 viewHeader">{{list.contactEmail}}</div>
-            <div class="col-md-1 col-sm-1 col-xs-1 editIcon" ng-click="editContact(list)"></div>
-            <br>
+        <div class="row">
+            <p class="col-md-6 col-sm-6 col-xs-6 searchClass">
+                <input type="text" name="search" ng-model="search" placeholder="Search" required>
+                <button>Search</button >
+            </p>
+            <p class="col-md-6 col-sm-6 col-xs-6 paddClass">
+                <button class="addClass" ng-click="add()">Add a Contact</button>
+            </p>
+        </div>
+        <br>
+        <div class="tableDiv">
+            <div class="tableHeader row">
+                <div class="col-md-4 col-sm-4 col-xs-4 rightBorder viewHeader">Name</div>
+                <div class="col-md-3 col-sm-3 col-xs-3 rightBorder viewHeader">Contact</div>
+                <div class="col-md-4 col-sm-4 col-xs-4  viewHeader">Mail</div>
+                <div class="col-md-1 col-sm-1 col-xs-1 viewHeader"></div>
+            </div>    
+            <div ng-repeat = "list in displayList | filter:search" class="row tableBody">
+                <div class="col-md-4 col-sm-4 col-xs-4 rightBorder viewHeader">{{list.firstName+" "+list.middleName+" "+list.lastName}}</div>
+                <div class="col-md-3 col-sm-3 col-xs-3 rightBorder viewHeader">{{list.contactNumber}}</div>
+                <div class="col-md-4 col-sm-4 col-xs-4  viewHeader">{{list.contactEmail}}</div>
+                <div class="col-md-1 col-sm-1 col-xs-1 editIcon" title="Edit"ng-click="editContact(list)"></div>
+                <br>
             </div>
         </div>
+        
     </main>
     </div>
 </body> 

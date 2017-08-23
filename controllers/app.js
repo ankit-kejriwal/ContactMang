@@ -3,9 +3,7 @@ angular.module('contact',['ui.bootstrap','toaster','ngAnimate'])
 
 contactController.$inject =['$scope','contactService','$uibModal','toaster'];
 function contactController($scope,contactService,$uibModal,toaster){
-        $scope.displayContact = false;
         $scope.add = function(){
-            $scope.viewClicked = false;
             var modalInstance = $uibModal.open({    
                 templateUrl : 'views/addContact.html',
                 controller: function($scope,$uibModalInstance,contactService){
@@ -22,17 +20,14 @@ function contactController($scope,contactService,$uibModal,toaster){
         });
     }   
     $scope.fetchContact = function(){
-        $scope.viewClicked = true;
-        $scope.displayContact = true;
         $scope.displayList = contactService.getContacts(); 
     }
     
-    $scope.editContact = function(list){
-        $scope.viewClicked = false;        
+    $scope.editContact = function(list){        
         var modalInstance = $uibModal.open({
             templateUrl : 'views/editContact.html',
             controller: function($scope,$uibModalInstance,contactService){
-                $scope.editObj = list;
+                $scope.editObj = JSON.parse(JSON.stringify(list));
                 $scope.editCont = function(obj){
                     contactService.edit(obj);
                     $uibModalInstance.close();

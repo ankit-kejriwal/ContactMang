@@ -1,14 +1,17 @@
 html,body,#container{
     width: 100%;
     height: 100%;
+    background-color: teal;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .mainHeader{
     text-align: center;
+    color: white;
 }
 header{
     width: 100%;
-    height: 20%;
-    background-color: teal;
+    height: 15%;
 }
 .formDiv{
     padding:2%; 
@@ -21,13 +24,38 @@ header{
 }
 .viewHeader{
     text-align: center;
-}
-.modal-dialog {
-    top: 15%;
+    color: black;
 }
 .editIcon{
     background: url(/images/edit-button.png) no-repeat;
     width: 16px;
     height: 16px;
     cursor: pointer;
+    margin-top: 3px;
+}
+.addClass{
+    float: right;
+}
+.tableHeader{
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 18px;
+}
+.rightBorder{
+    border-right: 1px solid black;
+}
+.tableBody{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    font-size: 16px;
+}
+.tableDiv{
+    background-color: ivory;
+}
+.searchClass{
+    padding-left: 2%;
+}
+.paddClass{
+    padding-right: 2%;
 }

@@ -74,7 +74,7 @@ function contactService(){
     service.edit = function(detail){
         var objValidity = {status:true};
         for(var i=0;i<lists.length;i++){
-            if(detail.number === lists[i].contactNumber){
+            if(detail.contactNumber === lists[i].contactNumber){
                 lists[i].firstName = detail.firstName;
                 lists[i].middleName = detail.middleName;
                 lists[i].lastName = detail.lastName;
