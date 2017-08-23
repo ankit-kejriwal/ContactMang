@@ -29,9 +29,13 @@ function contactController($scope,contactService,$uibModal,toaster){
             controller: function($scope,$uibModalInstance,contactService){
                 $scope.editObj = JSON.parse(JSON.stringify(list));
                 $scope.editCont = function(obj){
-                    contactService.edit(obj);
-                    $uibModalInstance.close();
-                    toaster.pop('success', "", "Updated");
+                    if(checkEntry(obj)){
+                            contactService.edit(obj);
+                            $uibModalInstance.close();
+                            toaster.pop('success', "", "Updated");
+                        } else{
+                            toaster.pop('error','',"Please check for special character in First Name");
+                        }
                 }
             }
     });
@@ -45,7 +49,7 @@ function contactController($scope,contactService,$uibModal,toaster){
                 return false;
             }
         }
-        if (obj.number.toString().length != 10)
+        if (obj.number && obj.number.toString().length != 10)
             return false;
         return true;
     }
