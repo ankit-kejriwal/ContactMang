@@ -43,7 +43,7 @@ function contactController($scope,contactService,$uibModal,toaster){
     
     
     function checkEntry(obj){
-        var splChars = "*|,\":<>[]{}`\';()@&$#%";
+        var splChars = "*|,\":<>[]{}`\';()@!&$#%";
         for (var i = 0; i < obj.firstName.length; i++) {
             if (splChars.indexOf(obj.firstName.charAt(i)) != -1){
                 return false;
